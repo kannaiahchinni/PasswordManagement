@@ -1,1 +1,47 @@
+
 /* You can add global styles to this file, and also import other style files */
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+@import  "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.3.5/base.min.css"
+@import "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.3.5/components.min.css"
+@import "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.3.5/tailwind.min.css"
+@import "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.3.5/utilities.min.css"
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap"
+// @import "../node_modules/flag-icon-css/sass/_flag-icon-base.scss" */
+// @import "../node_modules/flag-icon-css/sass/_flag-icon-list.scss" */
+//@import "../node_modules/flag-icon-css/sass/_variables.scss"
+//@import "../node_modules/flag-icon-css/sass/flag-icon.scss" */
+@import "../node_modules/flag-icon-css/css/flag-icon.min.css"
+@import "../node_modules/animate-sass/_animate.scss"
+
+body
+    font-family: "Source Sans Pro", sans-serif
+    -webkit-font-smoothing: antialiased
+    font-size: 16px
+    font-weight: 400
+    letter-spacing: 0.166667px
+    line-height: 1.7em
+    color: #7e8690
+    background-color: #f7f7f7
+
+.header-social
+    background: #161625!important
+
+.font-12
+    font-size: 12px
+.animated-border
+    display: inline-block
+    text-decoration: none
+    &::after
+        content: ''
+        display: block
+        width: 0
+        height: 2px
+        background: green
+        transition: width .3s
+    &:hover
+        &::after
+            width: 100%
+h1, h2, h3, h4, h5, h6, span, div, a, p
+    font-family: "Source Sans Pro", sans-serif
+    

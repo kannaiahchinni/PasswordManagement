@@ -1,0 +1,58 @@
+<app-banner [title]="'Services'" [caption]=''></app-banner>
+<section class="card-section ">
+  <div class="container">
+    <div class="flex md:flex md:flex-row sm:flex-col xs:flex-col flex-col justify-center flex-wrap flex-start ">
+      <div
+        class="card rounded-lg justify-center shadow border-0 md:w-1/4 sm:w-1/2 xs:w-full bg-blue-800 m-1 animate fadeInUp cursor-pointer"
+        *ngFor="let item of services" (click)="showInfo(item)">
+        <img class="card-img-top h-40 " [src]="item.image" alt="Health image">
+        <span class="flag-icon flag-icon-{{item.flag}}  rounded-lg " [ngClass]="{'visible shadow': item.flag}"></span>
+        <div class="card-body">
+          <h5 class="card-title uppercase text-blue-900 font-bold text-center text-2xl">
+            {{ item.title }}</h5>
+          <p class="card-text text-gray-600 short-desc"> {{ item.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="overlay" [ngClass]="class">
+  <div id="mySidenav" class="bg-white sidenav shadow z-50" [ngClass]="width">
+    <a class="btn text-2xl text-blue-900 cursor-pointer" (click)="clearInfo()">&times;</a>
+    <div class="container" *ngIf="selectedService">
+      <h5 class="text-teal-900 font-bold"> 
+        {{ selectedService.title }} <span *ngIf="selectedService.abb" class=""> ({{ selectedService.abb}}) </span>
+      </h5>
+      <p class="text-base text-gray-800 text-justify"> {{ selectedService.desc }}</p>
+      <p class="text-base text-gray-800 text-justify" [ngClass]="selectedService.desc1Class" *ngIf="selectedService.desc1"> {{ selectedService.desc1 }}</p>
+      <div class="list" *ngIf="selectedService.desc1List">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-base text-teal-800" *ngFor="let role of selectedService.desc1List">{{ role }}</li>
+        </ul>
+      </div>
+      <p class="text-base text-gray-800 text-justify" [ngClass]="selectedService.desc2Class" *ngIf="selectedService.desc2"> {{ selectedService.desc2 }}</p>
+      <div class="list" *ngIf="selectedService.desc2List">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-base text-teal-800" *ngFor="let role of selectedService.desc2List">{{ role }}</li>
+        </ul>
+      </div>
+      <p class="text-base text-gray-800 text-justify" [ngClass]="selectedService.desc3Class" *ngIf="selectedService.desc3"> {{ selectedService.desc3 }}</p>
+      <p class="text-base text-gray-800 text-justify"  *ngIf="selectedService.desc3Text"> {{ selectedService.desc3Text }}</p>
+
+      <div class="list" *ngIf="selectedService.desc3List">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-base text-teal-800" *ngFor="let role of selectedService.desc3List">{{ role }}</li>
+        </ul>
+      </div>
+      <p class="text-base text-gray-800 text-justify" [ngClass]="selectedService.desc4Class" *ngIf="selectedService.desc4"> {{ selectedService.desc4 }}</p>
+      <p class="text-base text-gray-800 text-justify"  *ngIf="selectedService.desc4Text"> {{ selectedService.desc4Text }}</p>
+
+      <h6 class="text-blue-900 font-bold"> {{ selectedService.heading1 }} </h6>
+      <div class="list">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-base text-teal-800" *ngFor="let role of selectedService.headingList">{{ role }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

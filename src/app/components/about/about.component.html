@@ -1,0 +1,28 @@
+<app-banner [title]="'About Us'" [caption]="about"></app-banner>
+<section class="about-section bg-white">
+  <div class="container  text-teal-900 about-section-div ">
+    <div class="block font-bold text-2xl pt-4 underline leading-normal"> Our Role:</div>
+    <div class="text-base mt-1 leading-normal">
+      We offer professional cooperation to all aspirants expecting to start offering health care services in Gulf Countries. We help them in completing the required licensing processes. We do assessment of the documentation submitted by the candidate to check the authenticity and accuracy. With our excellent connections in the administration, we can help our client get the required licenses within a brief period.
+    </div>
+    <div class="text-base mt-1 leading-normal">
+      We can process DATAFLOW verification application process for following Countries.
+    </div>
+    <div class="flex md:flex justify-start md:flex-row md:flex-row sm:flex sm:flex-row xs:flex-row p-2 flex-wrap flex-start mt-4">
+      <div class="p-1 rounded-lg md:w-1/6 sm:w-full xs:full col-sm-12 col-md-2 mt-4 country text-blue-900 hover:text-white hover:bg-teal-500" *ngFor="let country of countries">
+        <div class="text-center"> 
+          <span class="flag-icon flag-icon-{{country.flag}} block shadow"></span>
+           <span class="block font-bold uppercase">{{country.name}}</span>
+          </div>
+        <div class="text-center">({{country.abb}})</div>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <p class="text-base leading-normal">Dataflow process for DHA, creating Unique ID, Doing Self Assessment, Generating eligibility number and PROMETRIC exam booking.</p>
+      <p class="text-base leading-normal">We will be glad to help with the new application, adding additional certificate,License renewal processing and Dataflow report transfers from one country to another country</p>
+      <p class="text-base">
+        We can assist for all Health care professionals like Physician / Doctor, General Dentists & Specialists, Nurses and Allied Health Professionals.
+      </p>
+    </div>
+  </div>
+</section>
