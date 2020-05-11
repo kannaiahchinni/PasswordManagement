@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from './modules/header/header.module';
 import { AppComponent } from './app.component';
@@ -25,7 +25,8 @@ import { OptionComponent } from './components/option/option.component';
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
-    BannerModule
+    BannerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

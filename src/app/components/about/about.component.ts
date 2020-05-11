@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-about',
@@ -7,24 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  public about = `CmedVerify is a pioneer in Dataflow application 
-  processing and licensing examination registration services conducted by various regulatory 
-  bodies in different countries`;
-  public countries = [];
+  public links = [];
 
-  constructor() { }
+  constructor(private commonService: CommonService) { }
 
   ngOnInit() {
-    this.countries = [
-      {name:'Singapore', abb:'MOMS', flag:'sg', text: 'Ministry of Manpower'},
-      {name: 'Saudi', abb: 'SCFHS', flag:'sa'},
-      {name: 'Dubai', abb: 'DHA', flag: 'ae'},
-      {name: 'Abu Dhabi', abb: 'HAAD/DOH', flag:'ae'},
-      {name: 'Qatar', abb: 'QCHP/MOH', flag: 'qa'},
-      {name: 'Behrain', abb: 'NHRA', flag: 'bh'},
-      {name: 'Kuwait', abb: 'OMSB', flag: 'kw'},
-      {name: 'Oman', abb: 'OMSB', flag: 'om'}
-    ]
+    this.getLinks();
+  }
+
+  getLinks() {
+    this.links = this.commonService.getCachedLinks();
+    if (this.links.length < 1) {
+      this.commonService.getLinks().subscribe(list => {
+        this.links = list;
+        this.commonService.setLinks(this.links);
+      });
+    }
   }
 
 }
