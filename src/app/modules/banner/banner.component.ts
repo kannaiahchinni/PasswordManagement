@@ -10,8 +10,7 @@ export class BannerComponent implements OnInit {
 
   @Input() title;
   @Input() caption;
-  @Input() subCaption;
-  @Input() action;
+  @Input() imageClass;
 
   constructor() { }
 

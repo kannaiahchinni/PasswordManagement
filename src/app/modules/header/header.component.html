@@ -1,36 +1,10 @@
 <header class="navigation-header animated fadeInUp bg-white">
-  <div class="header-top social-media flex d-none d-md-block d-lg-block bg-teal-900">
-    <div class="container text-white">
-      <div class="row justify-content-between align-item-center p-2">
-        <div class="col-lg-8 col-md-8 flex md:flex font-12 justify-content-start font-bold "> 
-          <div class="animated-border">
-            <span class="mr-1"><i class="fa fa-at" aria-hidden="true"></i> </span>cmedverify@gmail.com
-          </div> 
-          <div class="ml-2">
-            <span class="mr-1"><i class="fa fa-phone" aria-hidden="true"></i> </span>+91-7893876339
-          </div>  
-        </div>
-        <div class="col-lg-4 col-md-4 flex md:flex flex-grow justify-content-end justify-content-space">
-          <div class="facebook mr-2">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-          </div> 
-          <div class="linkedin mr-2">
-            <i class="fa fa-linkedin" aria-hidden="true"></i>
-          </div>
-          <div class="twitter mr-2">
-            <i class="fa fa-twitter " aria-hidden="true"></i>
-          </div> 
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="flex md:flex justify-between flex-wrap">
 
   <nav class="container flex items-center justify-between flex-wrap p-4">
     <div class="flex items-center flex-shrink-0 text-black mr-6 ">
-      <img src="/assets/logo.png" class="h-10" />
-      <span class="text-2xl font-bold uppercase tracking-tight">cmedverify</span>
+      <!-- <img src="/assets/logo.png" class="h-10" /> -->
+      <span class="text-2xl font-bold uppercase tracking-tight text-teal-700">Sridhar Komalla</span>
     </div>
     <div class="block lg:hidden">
       <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
@@ -39,17 +13,24 @@
     </div>
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
       <div class="text-sm lg:flex-grow menu-items text-right text-base">
-        <a routerLink="/" class="block lg:inline-block lg:mt-0 text-teal-700 hover:text-teal-900 mr-4 animated-border">
+        <a routerLink="/" class="block font-semibold lg:inline-block lg:mt-0 text-teal-700 hover:text-teal-900 mr-4 animated-border">
           <i class="fa fa-home" aria-hidden="true"></i> Home
         </a>
-        <a routerLink="service" class="block lg:inline-block lg:mt-0 text-teal-700 hover:text-teal-900 mr-4 animated-border">
-          <i class="fa fa-gear" aria-hidden="true"></i> Services
+        <a  class="service block lg:inline-block lg:mt-0 text-teal-700 hover:text-teal-900 mr-4 animated-border">
+          <!-- <i class="fa fa-gear" aria-hidden="true"></i> Services -->
+          <div class="dropdown inline-block relative">
+            <button class=" text-teal-700 font-semibold py-2 px-4 rounded inline-flex items-center">
+              <span class="mr-1"> <i class="fa fa-gear" aria-hidden="true"></i> Services </span>
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+            </button>
+            <ul class="dropdown-menu absolute hidden text-teal-700 pt-1 shadow border-0">
+              <li class=""><a routerLink="encryption" class="rounded-t text-teal-700 font-semibold hover:text-gray-900 py-2 px-4 block whitespace-no-wrap">Encryption</a></li>
+              <li class=""><a routerLink="decryption" class=" text-teal-700 font-semibold hover:text-gray-900 py-2 px-4 block whitespace-no-wrap">Decryption</a></li>
+            </ul>
+          </div>
         </a>
-        <a routerLink="about" routerLinkActive="active" class="block lg:inline-block lg:mt-0 text-teal-700 hover:text-teal-900 mr-4 active:text-gray-900 animated-border">
-          <i class="fa fa-info-circle" aria-hidden="true"></i> About
-        </a>
-        <a routerLink="contact" routerLinkActive="active" class="block lg:inline-block lg:mt-0 text-teal-700 hover:text-teal-900 animated-border">
-          <i class="fa fa-paper-plane" aria-hidden="true"></i> Contact
+        <a routerLink="about" routerLinkActive="active" class="block font-semibold lg:inline-block lg:mt-0 text-teal-700 hover:text-teal-900 mr-4 active:text-gray-900 animated-border">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> Company
         </a>
       </div>
      <!-- <div>

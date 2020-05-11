@@ -1,0 +1,52 @@
+<section class="bg-white">
+  <div class="container pt-4">
+
+    <div class="flex md:flex-row sm:flex-col items-center flex-start">
+      <div class="flex md:flex flex-col sm:flex-col w-1/3">
+        <h5 class="text-xl text-gray-900"> Select Environment</h5>
+        <div class="flex flex-row">
+          <div class="flex items-center mr-4 mb-4" *ngFor="let env of envs">
+            <input id="radio{{env}}" type="radio" name="env" class="hidden" [value]="env"
+              (change)="selectType($event)" />
+            <label for="radio{{env}}" class="flex items-center cursor-pointer font-semibold">
+              <span class="w-8 h-8 inline-block mr-1 rounded-full border border-grey"></span>
+              {{ env }} </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex md:flex flex-col sm:flex-col w-1/3">
+        <h5 class="text-xl text-gray-900"> Select Input Type</h5>
+        <div class="flex flex-row">
+          <div class="flex items-center mr-4 mb-4" *ngFor="let input of inputs">
+            <input id="radio{{input}}" [disabled]="!selectedType" type="radio" name="input" class="hidden"
+              [value]="input" (change)="selectInput($event)" />
+            <label for="radio{{input}}" class="flex items-center cursor-pointer font-semibold">
+              <span class="w-8 h-8 inline-block mr-1 rounded-full border border-grey"></span>
+              {{ input }} </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="flex flex-row" *ngIf="selectedInput === 'String'">
+        <textarea class="w-full border-2 border-gray h-20 hover:border-blue">
+      </textarea>
+      </div>
+
+      <div class="overflow-hidden relative w-48 mt-4 mb-4" *ngIf="selectedInput === 'File'">
+        <button class="bg-blue-900 hover:bg-blue-light text-white font-bold py-2 px-4 w-full inline-flex items-center">
+          <svg fill="#FFF" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+          </svg>
+          <span class="ml-2">Upload File</span>
+        </button>
+        <input class="cursor-pointer  block w-full position -m-8 p-4 opacity-0 pin-r pin-t" type="file" name="file"    >
+      </div>
+    </div>
+
+
+  </div>
+</section>

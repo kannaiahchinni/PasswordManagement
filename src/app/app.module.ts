@@ -5,18 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from './modules/header/header.module';
 import { AppComponent } from './app.component';
 import { BannerModule } from './modules/banner/banner.module';
-import { ContactComponent } from './components/contact/contact.component';
+import { DecryptionComponent } from './components/decryption/decryption.component';
 import { AboutComponent } from './components/about/about.component';
-import { ServiceComponent } from './components/service/service.component';
+import { EncryptionComponent } from './components/encryption/encryption.component';
 import { HomeComponent } from './components/home/home.component';
+import { OptionComponent } from './components/option/option.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent,
+    DecryptionComponent,
     AboutComponent,
-    ServiceComponent,
-    HomeComponent
+    EncryptionComponent,
+    HomeComponent,
+    OptionComponent
   ],
   imports: [
     BrowserModule,
