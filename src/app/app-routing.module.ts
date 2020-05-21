@@ -4,6 +4,8 @@ import { DecryptionComponent } from './components/decryption/decryption.componen
 import { AboutComponent } from './components/about/about.component';
 import { EncryptionComponent } from './components/encryption/encryption.component';
 import { HomeComponent } from './components/home/home.component';
+import { LibraryComponent } from './components/library/library.component';
+import { ApplicationComponent } from './components/application/application.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path: 'encryption',
     component: EncryptionComponent
+  },
+  {
+    path: 'library',
+    component: LibraryComponent
+  },
+  {
+    path: 'application',
+    component: ApplicationComponent
   },
   {
     path: '',

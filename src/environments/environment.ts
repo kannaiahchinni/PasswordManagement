@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  host: 'https://xyz.com',
+  url: 'https://api-dev.syngenta.com/ecom/properties',
+  version: 'v1.0'
 };
 
 /*

@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
-  host: 'https://xyz.com'
+  url: 'https://api-prod.syngenta.com/ecom/properties',
+  version: '1.0'
 
 };

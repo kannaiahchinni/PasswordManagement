@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-option',
@@ -10,9 +11,11 @@ export class OptionComponent implements OnInit {
   public selectedType: string;
   public selectedInput: string;
   public envs = ['Dev', 'Test', 'Prod'];
-  public inputs = ['String', 'File'];
+  public inputs = ['String'];
 
-  constructor() { }
+  @Input() type;
+
+  constructor(private commonService: CommonService) { }
 
   ngOnInit() {
   }
@@ -21,8 +24,14 @@ export class OptionComponent implements OnInit {
     this.selectedType = $event.target.value;
   }
   selectInput($event): void {
-    console.log('hello'); 
     this.selectedInput = $event.target.value;
+  }
+
+  submit() {
+    debugger;
+    this.commonService.execute(this.type, this.selectedType.toLowerCase(), this.selectedInput).subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

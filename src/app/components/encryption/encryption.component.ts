@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-encryption',
@@ -14,10 +15,13 @@ export class EncryptionComponent implements OnInit {
   public inputs = ['String', 'File'];
   public title = '';
 
-  constructor() {
+  constructor(private commService: CommonService) {
    }
 
   ngOnInit() {
+  }
+
+  submit() {
   }
 
 }
