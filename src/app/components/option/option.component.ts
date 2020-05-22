@@ -13,6 +13,8 @@ export class OptionComponent implements OnInit {
   public envs = ['Dev', 'Test', 'Prod'];
   public inputs = ['String'];
   public password: String;
+  public result: any = {};
+  public loading: Boolean = false;
 
   @Input() type;
   @Input() label;
@@ -30,8 +32,10 @@ export class OptionComponent implements OnInit {
   }
 
   submit() {
+    this.loading = true;
     this.commonService.execute(this.type, this.password, this.selectedType.toLowerCase(), ).subscribe(data => {
-      console.log(data);
+      this.result = data;
+      this.loading = false;
     });
   }
 

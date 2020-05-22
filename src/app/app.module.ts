@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from './modules/header/header.module';
 import { FileUploadModule } from 'ng2-file-upload';
 import { FormsModule } from '@angular/forms';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
 import { AppComponent } from './app.component';
 import { BannerModule } from './modules/banner/banner.module';
 import { DecryptionComponent } from './components/decryption/decryption.component';
@@ -34,7 +35,8 @@ import { ApplicationComponent } from './components/application/application.compo
     BannerModule,
     HttpClientModule,
     FileUploadModule,
-    FormsModule
+    FormsModule,
+    NgxJsonViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -29,9 +29,10 @@
       </div>
     </div>
 
-    <div>
+    <div class="md:flex sm:flex md:flex-row sm:flex-col">
+      <div class="w-2/5">
       <div class="flex flex-row" *ngIf="selectedInput === 'String'">
-        <input type="text" class="w-1/2 border-2 border-gray hover:border-blue p-2" [(ngModel)]="password" />
+        <input type="text" class="w-full border-2 border-gray hover:border-blue p-2" [(ngModel)]="password" />
       </div>
 
       <div class="overflow-hidden relative w-48 mt-4 mb-4" *ngIf="selectedInput === 'File'">
@@ -43,6 +44,11 @@
           <span class="ml-2">Upload File</span>
         </button>
         <input class="cursor-pointer  block w-full position -m-8 p-4 opacity-0 pin-r pin-t" type="file" name="file"    >
+      </div>
+      </div>
+      <div class="w-3/5 text-center">
+        <span *ngIf="loading"> Please wait... </span>
+        <ngx-json-viewer [json]="result" *ngIf="!loading" class="text-blue-200"></ngx-json-viewer>
       </div>
     </div>
 
