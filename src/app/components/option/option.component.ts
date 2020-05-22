@@ -12,8 +12,10 @@ export class OptionComponent implements OnInit {
   public selectedInput: string;
   public envs = ['Dev', 'Test', 'Prod'];
   public inputs = ['String'];
+  public password: String;
 
   @Input() type;
+  @Input() label;
 
   constructor(private commonService: CommonService) { }
 
@@ -29,7 +31,7 @@ export class OptionComponent implements OnInit {
 
   submit() {
     debugger;
-    this.commonService.execute(this.type, this.selectedType.toLowerCase(), this.selectedInput).subscribe(data => {
+    this.commonService.execute(this.type, this.password, this.selectedType.toLowerCase(), ).subscribe(data => {
       console.log(data);
     });
   }

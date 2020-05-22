@@ -31,8 +31,7 @@
 
     <div>
       <div class="flex flex-row" *ngIf="selectedInput === 'String'">
-        <textarea class="w-full border-2 border-gray h-20 hover:border-blue">
-      </textarea>
+        <input type="text" class="w-1/2 border-2 border-gray hover:border-blue p-2" [(ngModel)]="password" />
       </div>
 
       <div class="overflow-hidden relative w-48 mt-4 mb-4" *ngIf="selectedInput === 'File'">
@@ -47,11 +46,12 @@
       </div>
     </div>
 
-    <button class="bg-gray-800 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded shadow" *ngIf="selectedInput"
+    <div class="flex my-4">
+      <button class=" bg-gray-800 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded shadow" *ngIf="selectedInput"
     (click)="submit()"
-    >
-      Button
-    </button>
+    > {{ label }}</button>
+    </div>
+    
 
   </div>
 </section>
