@@ -30,7 +30,6 @@ export class OptionComponent implements OnInit {
   }
 
   submit() {
-    debugger;
     this.commonService.execute(this.type, this.password, this.selectedType.toLowerCase(), ).subscribe(data => {
       console.log(data);
     });
