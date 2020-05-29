@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subscriber, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,11 @@ export class CommonService {
   private url: String = environment.url;
   private version: String = environment.version;
 
-  constructor(private httpClient:  HttpClient) { }
+  constructor(@Inject(APP_BASE_HREF) private baseHref: String , private httpClient:  HttpClient) { 
+  }
 
   getLinks(): any {
-    return this.httpClient.request('GET', '/assets/links.json', {});
+    return this.httpClient.request('GET', `${this.baseHref}assets/links.json`, {});
   }
   setLinks(links: any): void {
     this.links = links;
@@ -27,7 +29,7 @@ export class CommonService {
   }
 
   getApplications(): any {
-    return this.httpClient.request('GET', '/assets/applications.json', {});
+    return this.httpClient.request('GET', `${this.baseHref}assets/applications.json`, {});
   }
   setApplications(apps: any): void {
     this.applications = apps;
@@ -36,7 +38,7 @@ export class CommonService {
     return this.applications;
   }
   getDocs(): any {
-    return this.httpClient.request('GET', '/assets/library.json', {});
+    return this.httpClient.request('GET', `${this.baseHref}assets/library.json`, {});
   }
   setDocs(docs: any): void {
     this.documents = docs;

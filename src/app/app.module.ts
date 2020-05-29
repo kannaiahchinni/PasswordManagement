@@ -15,7 +15,12 @@ import { HomeComponent } from './components/home/home.component';
 import { OptionComponent } from './components/option/option.component';
 import { LibraryComponent } from './components/library/library.component';
 import { ApplicationComponent } from './components/application/application.component';
+import { PlatformLocation, APP_BASE_HREF } from '@angular/common';
 
+
+export function getBaseHref(platformLocation: PlatformLocation): String {
+  return platformLocation.getBaseHrefFromDOM();
+}
 
 @NgModule({
   declarations: [
@@ -38,7 +43,13 @@ import { ApplicationComponent } from './components/application/application.compo
     FormsModule,
     NgxJsonViewerModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useFactory: getBaseHref,
+      deps: [PlatformLocation]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
